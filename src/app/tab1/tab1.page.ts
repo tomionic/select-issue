@@ -9,4 +9,16 @@ export class Tab1Page {
 
   constructor() {}
 
+  onSelect(event: MouseEvent): void {
+    event.stopImmediatePropagation();
+
+    console.log('Select clicked:', event);
+
+    if (event instanceof PointerEvent && event.pointerId === -1) {
+      return;
+    }
+
+    // Code beyond this point will only run once
+  }
+
 }
